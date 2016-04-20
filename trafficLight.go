@@ -8,11 +8,15 @@ import (
 /***********************************************************************
  drivingNorth and turningLeft both infinitely send their rude gestures
  to the the channel that was passed as a function parameter
+ 
+ Let's say every 3 seconds the traffic light changes...
+ Let's add some functionality to the code bellow to alert us when
+                         an accident occurs
 *************************************************************************/
 func drivingNorth(greenLight chan<- string) {
   for {
     greenLight <- "BEEP BEEP, GOING NORTH PAL, OUTTA MY WAY!!!"
-    time.Sleep(time.Second *2)
+    time.Sleep(time.Second)
   }
 }
 
